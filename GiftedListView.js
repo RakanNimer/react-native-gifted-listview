@@ -51,7 +51,7 @@ var GiftedListView = React.createClass({
       scrollEnabled: true,
       withSections: false,
       onFetch(page, callback, options) { callback([]); },
-
+      loadMoreText: 'Load more',
       paginationFetchingView: null,
       paginationAllLoadedView: null,
       paginationWaitingView: null,
@@ -79,7 +79,7 @@ var GiftedListView = React.createClass({
     scrollEnabled: React.PropTypes.bool,
     withSections: React.PropTypes.bool,
     onFetch: React.PropTypes.func,
-
+    loadMoreText: React.PropTypes.string,
     paginationFetchingView: React.PropTypes.func,
     paginationAllLoadedView: React.PropTypes.func,
     paginationWaitingView: React.PropTypes.func,
@@ -135,7 +135,7 @@ var GiftedListView = React.createClass({
         style={[this.defaultStyles.paginationView, this.props.customStyles.paginationView]}
       >
         <Text style={[this.defaultStyles.actionsLabel, this.props.customStyles.actionsLabel]}>
-          Load more
+          {this.props.loadMoreText}
         </Text>
       </TouchableHighlight>
     );
