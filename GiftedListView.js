@@ -9,6 +9,7 @@ var {
   View,
   Text,
   RefreshControl,
+  ActivityIndicator
 } = require('react-native');
 
 
@@ -99,10 +100,13 @@ var GiftedListView = React.createClass({
     if (this.props.paginationFetchingView) {
       return this.props.paginationFetchingView();
     }
-
     return (
       <View style={[this.defaultStyles.paginationView, this.props.customStyles.paginationView]}>
-        <GiftedSpinner />
+        <ActivityIndicator
+           animating={true}
+           size="small"
+           {...this.props}
+         />
       </View>
     );
   },
